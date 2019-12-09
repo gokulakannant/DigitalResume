@@ -14,7 +14,7 @@ function ProfileComponent() {
           subtitle={"Software Developer"}
           title={"Gokulakannan T"}
           description={
-            "Around 2 year 8 months of experience in web and database application of various systems. A passionate programmer who likes web technologies(both front end and back end) and loves to write clean and beautiful code."
+            "Around 3 years of experience in web and database application of various systems. A passionate programmer who likes web technologies(both front end and back end) and loves to write clean and beautiful code."
           }
           footer={<DownloadComponent />}
         />

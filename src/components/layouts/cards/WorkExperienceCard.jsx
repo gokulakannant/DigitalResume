@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function WorkExperienceCard(props) {
+function WorkExperienceCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const { title, subtitle, description, companyUrl, experience } = props;
@@ -92,3 +92,5 @@ export default function WorkExperienceCard(props) {
     </Card>
   );
 }
+
+export default WorkExperienceCard;
