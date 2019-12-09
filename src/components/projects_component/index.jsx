@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import RegularCard from "../layouts/cards/RegularCard";
 import ItemGrid from "../layouts/grid/ItemGrid";
 import ProjectCard from "../layouts/cards/ProjectCard";
+import { projects, ownProjects } from "../../data/projects";
 
 const styles = theme => ({
   root: {
@@ -29,33 +30,36 @@ function ProjectsComponent(props) {
           headerColor={"orange"}
           content={
             <Grid container>
-              <ItemGrid item xs={12} sm={12} md={4}>
-                <ProjectCard
-                  title={"Daimler"}
-                  description={
-                    "A truck management application to forecast the future requirements"
-                  }
-                  siteUrl={""}
-                />
-              </ItemGrid>
-              <ItemGrid item xs={12} sm={12} md={4}>
-                <ProjectCard
-                  title={"Learning Space"}
-                  description={
-                    "A website to conduct LIVE sessions and produce videos for Government examinations and other competitive examinations. "
-                  }
-                  siteUrl={"https://www.learningspacedigital.com"}
-                />
-              </ItemGrid>
-              <ItemGrid item xs={12} sm={12} md={4}>
-                <ProjectCard
-                  title={"Jaguar Land Rover"}
-                  description={
-                    "Built API’s for communication between Web apps and C++ layer. "
-                  }
-                  siteUrl={""}
-                />
-              </ItemGrid>
+              {projects.map((project, index) => {
+                return <ItemGrid key={index} item xs={12} sm={12} md={4}>
+                          <ProjectCard
+                            title={project.title}
+                            description={project.description}
+                            siteUrl={project.siteUrl}
+                            technologyStack={project.technologyStack}
+                          />
+                        </ItemGrid>
+              })}
+            </Grid>
+          }
+        />
+      </ItemGrid>
+      <ItemGrid item xs={12} sm={12} md={8}>
+        <RegularCard
+          cardTitle={"Own Projects (Open source)"}
+          headerColor={"green"}
+          content={
+            <Grid container>
+              {ownProjects.map((project, index) => {
+                return <ItemGrid key={index} item xs={12} sm={12} md={6}>
+                          <ProjectCard
+                            title={project.title}
+                            description={project.description}
+                            siteUrl={project.siteUrl}
+                            technologyStack={project.technologyStack}
+                          />
+                        </ItemGrid>
+              })}
             </Grid>
           }
         />
